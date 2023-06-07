@@ -13,6 +13,16 @@
 	}
 </style>
 
+<style type='text/css'>
+	.embeddedServiceHelpButton .helpButton .uiButton {
+		background-color: #7A99AC;
+		font-family: "Verdana", sans-serif;
+	}
+	.embeddedServiceHelpButton .helpButton .uiButton:focus {
+		outline: 1px solid #7A99AC;
+	}
+</style>
+
 <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
 <script type='text/javascript'>
 	var initESW = function(gslbBaseURL) {
@@ -39,16 +49,16 @@
 
 		embedded_svc.init(
 			'https://psa-customerfirst--marketingb.sandbox.my.salesforce.com',
-			'https://psa-customerfirst--marketingb.sandbox.my.site.com/citroen',
+			'https://psa-customerfirst--marketingb.sandbox.my.site.com/dsautomobiles',
 			gslbBaseURL,
 			'00D0C0000002E7W',
-			'IT_Chat_Citroen_iAdvice',
+			'IT_Chat_DS_iAdvice',
 			{
 				baseLiveAgentContentURL: 'https://c.la1-c1cs-lo2.salesforceliveagent.com/content',
 				deploymentId: '5721r0000004Fqg',
-				buttonId: '5730C000000CaVd',
+				buttonId: '5730C000000CaVf',
 				baseLiveAgentURL: 'https://d.la1-c1cs-lo2.salesforceliveagent.com/chat',
-				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I0C000000CaUQUA0_185a1aee8e5',
+				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I0C000000CaURUA0_185a1b23e02',
 				isOfflineSupportEnabled: false
 			}
 		);
