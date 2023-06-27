@@ -130,10 +130,10 @@
 		embedded_svc.settings.entryFeature = 'LiveAgent';
 
 		embedded_svc.init(
-			'https://psa-customerfirst--marketingb.sandbox.my.salesforce.com',
-			'https://psa-customerfirst--marketingb.sandbox.my.site.com/PSADealer',
+			'https://psa-customerfirst--hotfix1.sandbox.my.salesforce.com',
+			'https://psa-customerfirst--hotfix1.sandbox.my.site.com/PSADealer',
 			gslbBaseURL,
-			'00D0C0000002E7W',
+			'00D9E000000A6K7',
 			'Topolino_eShop_it',
 			{
 				baseLiveAgentContentURL: 'https://c.la1-c1cs-lo2.salesforceliveagent.com/content',
@@ -168,7 +168,7 @@ if (isMobileDevice) {} else {
 
     if (!window.embedded_svc) {
         var s = document.createElement('script');
-        s.setAttribute('src', 'https://psa-customerfirst--marketingb.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+        s.setAttribute('src', 'https://psa-customerfirst--hotfix1.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
         s.onload = function() {
             initESW(null);
         };
