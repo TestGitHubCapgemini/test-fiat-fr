@@ -105,89 +105,31 @@
       </style>
 
 
-<script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+<script type='text/javascript' src='https://service.force.com/embeddedservice/menu/fab.min.js'></script>
 <script type='text/javascript'>
 	var initESW = function(gslbBaseURL) {
-		embedded_svc.settings.displayHelpButton = true; //Or false
-		embedded_svc.settings.language = 'it'; //For example, enter 'en' or 'en-US'
+		// Required if you want labels in a language that’s different from your user’s context.
+		embedded_svc.menu.settings.language = 'it'; //For example, enter 'en' or 'en-US'
 
-		//embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
-		//embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
-
-		//embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
-		//embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
-
-		// Settings for Chat
-		//embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
-			// Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
-			// Returns a valid button ID.
-		//};
-		//embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
-		//embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
-		//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
-
-		embedded_svc.settings.enabledFeatures = ['LiveAgent'];
-		embedded_svc.settings.entryFeature = 'LiveAgent';
-
-		embedded_svc.init(
+		embedded_svc.menu.init(
 			'https://psa-customerfirst--marketingb.sandbox.my.salesforce.com',
-			'https://psa-customerfirst--marketingb.sandbox.my.site.com/PSADealer',
+			'https://d.la1-c1cs-lo2.salesforceliveagent.com/chat',
 			gslbBaseURL,
 			'00D0C0000002E7W',
-			'Topolino_eShop_it',
-			{
-				baseLiveAgentContentURL: 'https://c.la1-c1cs-lo2.salesforceliveagent.com/content',
-				deploymentId: '5721r0000004Fqg',
-				buttonId: '5730C000000Caj1',
-				baseLiveAgentURL: 'https://d.la1-c1cs-lo2.salesforceliveagent.com/chat',
-				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I0C000000CafQUAS_18891616949',
-				isOfflineSupportEnabled: false
-			}
+			'TopolinoTest'
 		);
-    };
+	};
 
- var details = navigator.userAgent;
-// Creating a regular expression containing some mobile devices keywords to search it in details string
-var regexp = /(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i;
-
-		// Using test() method to search regexp in details
-var isMobileDevice = regexp.test(details);
-if (isMobileDevice) {} else {
-    console.log('inside desktop');
-	
-var intervalID = setInterval(miMetodo, 1000);
-}
-	function miMetodo() {
-  	console.log('inside interval');
-    var buttons = document.getElementsByClassName('rich-menu-item embeddedServiceLiveAgentStateChatRichItem');
-    var style = document.createElement('style');
-	
-
-      Array.from(buttons).forEach(element => {
-      if (element.innerHTML == '800 97 93 00') {
-	      
-        element.style.pointerEvents = "none";
-        element.style.opacity = 0.4;
-	      clearInterval(intervalID);
-      }
-    });
-
-  
-
-}
-
-
-
-    if (!window.embedded_svc) {
-        var s = document.createElement('script');
-        s.setAttribute('src', 'https://psa-customerfirst--marketingb.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
-        s.onload = function() {
-            initESW(null);
-        };
-        document.body.appendChild(s);
-    } else {
-        initESW('https://service.force.com');
-    }
+	if (!window.embedded_svc || !window.embedded_svc.menu) {
+		var s = document.createElement('script');
+		s.setAttribute('src', 'https://psa-customerfirst--marketingb.sandbox.my.salesforce.com/embeddedservice/menu/fab.min.js');
+		s.onload = function() {
+			initESW(null);
+		};
+		document.body.appendChild(s);
+	} else {
+		initESW('https://service.force.com');
+	}
 </script>
 </body>
 </html>
