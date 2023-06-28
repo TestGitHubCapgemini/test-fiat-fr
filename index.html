@@ -158,15 +158,13 @@ if (isMobileDevice) {} else {
     var buttons = document.getElementsByClassName('rich-menu-item embeddedServiceLiveAgentStateChatRichItem');
     var style = document.createElement('style');
 	
-while(true){
+
       Array.from(buttons).forEach(element => {
       if (element.innerHTML == '800 97 93 00') {
         element.style.pointerEvents = "none";
         element.style.opacity = 0.4;
       }
     });
-}
-
 }
 
     if (!window.embedded_svc) {
