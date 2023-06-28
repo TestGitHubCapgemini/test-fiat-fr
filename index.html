@@ -155,6 +155,7 @@ var isMobileDevice = regexp.test(details);
 if (isMobileDevice) {} else {
     console.log('inside desktop');
 setInterval(function() {
+	console.log('inside interval');
     var buttons = document.getElementsByClassName('rich-menu-item embeddedServiceLiveAgentStateChatRichItem');
     var style = document.createElement('style');
 	
