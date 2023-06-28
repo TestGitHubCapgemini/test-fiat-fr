@@ -154,6 +154,8 @@ var regexp = /(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|com
 var isMobileDevice = regexp.test(details);
 if (isMobileDevice) {} else {
     console.log('inside desktop');
+	var isReady=false;
+	if(!isReady){
 setInterval(function() {
 	console.log('inside interval');
     var buttons = document.getElementsByClassName('rich-menu-item embeddedServiceLiveAgentStateChatRichItem');
@@ -162,11 +164,14 @@ setInterval(function() {
 
       Array.from(buttons).forEach(element => {
       if (element.innerHTML == '800 97 93 00') {
+	      
         element.style.pointerEvents = "none";
         element.style.opacity = 0.4;
+	      isReady=true;
       }
     });
 }, 1000);
+}
 }
 
     if (!window.embedded_svc) {
