@@ -154,10 +154,11 @@ var regexp = /(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|com
 var isMobileDevice = regexp.test(details);
 if (isMobileDevice) {} else {
     console.log('inside desktop');
-	var isReady=false;
-	if(!isReady){
-setInterval(function() {
-	console.log('inside interval');
+	
+var intervalID = setInterval(miMetodo, 1000);
+}
+	function miMetodo() {
+  	console.log('inside interval');
     var buttons = document.getElementsByClassName('rich-menu-item embeddedServiceLiveAgentStateChatRichItem');
     var style = document.createElement('style');
 	
@@ -167,13 +168,15 @@ setInterval(function() {
 	      
         element.style.pointerEvents = "none";
         element.style.opacity = 0.4;
-	      isReady=true;
-	      clearInterval(this);
+	      clearInterval(intervalID);
       }
     });
-}, 1000);
+
+  
+
 }
-}
+
+
 
     if (!window.embedded_svc) {
         var s = document.createElement('script');
