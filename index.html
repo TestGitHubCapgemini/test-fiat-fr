@@ -273,7 +273,7 @@ lightning-button[c-preChatLwc_preChatLwc] button{
 	  font-size: 14px;
 }
 
-[id^="radio-1"]{
+[id^="radio"]{
   margin-left: 55px;
 }
 label.slds-radio__label{
@@ -309,44 +309,18 @@ label.slds-form-element__label.slds-no-flex {
 }
 </style>
 <script type='text/javascript'>
-	var initESW = function(gslbBaseURL) {
-		embedded_svc.settings.displayHelpButton = true; //Or false
-		embedded_svc.settings.language = 'it'; //For example, enter 'en' or 'en-US'
-
-		//embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
-		//embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
-
-		//embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
-		//embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
-
-		// Settings for Chat
-		//embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
-			// Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
-			// Returns a valid button ID.
-		//};
-		//embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
-		//embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
-		//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
-
-		embedded_svc.settings.enabledFeatures = ['LiveAgent'];
-		embedded_svc.settings.entryFeature = 'LiveAgent';
-
-		embedded_svc.init(
+var initESW = function(gslbBaseURL) {
+    // Required if you want labels in a language that’s different from your user’s context.
+    embedded_svc.menu.settings.language = 'it'; //For example, enter 'en' or 'en-US'
+	
+		embedded_svc.menu.init(
 			'https://psa-customerfirst--devhotfix.sandbox.my.salesforce.com',
-			'https://psa-customerfirst--devhotfix.sandbox.my.site.com/PSADealer',
+			'https://d.la1-c1cs-cdg.salesforceliveagent.com/chat',
 			gslbBaseURL,
 			'00D0D0000000P9N',
-			'IT_Fiat_JAFAL',
-			{
-				baseLiveAgentContentURL: 'https://c.la1-c1cs-cdg.salesforceliveagent.com/content',
-				deploymentId: '5720D00000000EH',
-				buttonId: '5730D00000000WY',
-				baseLiveAgentURL: 'https://d.la1-c1cs-cdg.salesforceliveagent.com/chat',
-				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I0C000000CabsUAC_1882a177f62',
-				isOfflineSupportEnabled: false
-			}
+			'IT_Fiat_JAFAL'
 		);
-	};
+};
 
 var details = navigator.userAgent;
 // Creating a regular expression containing some mobile devices keywords to search it in details string
@@ -363,17 +337,16 @@ if (isMobileDevice) {} else {
     document.body.appendChild(style);
 }
 
-	if (!window.embedded_svc) {
-		var s = document.createElement('script');
-		s.setAttribute('src', 'https://psa-customerfirst--devhotfix.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
-		s.onload = function() {
-			initESW(null);
-		};
-		document.body.appendChild(s);
-	} else {
-		initESW('https://service.force.com');
-	}
-
+if (!window.embedded_svc || !window.embedded_svc.menu) {
+    var s = document.createElement('script');
+    s.setAttribute('src', 'https://psa-customerfirst--devhotfix.sandbox.my.salesforce.com/embeddedservice/menu/fab.min.js');
+    s.onload = function() {
+        initESW(null);
+    };
+    document.body.appendChild(s);
+} else {
+    initESW('https://service.force.com');
+}
 </script>
 </body>
 </html>
