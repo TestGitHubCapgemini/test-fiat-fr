@@ -216,7 +216,7 @@
       </div>
     </div>
   </div>
-<!-- Embedded Service <-> LWC Wrapper -->
+ <!-- Embedded Service <-> LWC Wrapper -->
       <script>
           window.addEventListener("message", function(event) {
               var payload = event.data;
@@ -232,7 +232,7 @@
       <style type='text/css'>
         @import url('https://psa-customerfirst--c.visualforce.com/resource/1671057967000/SnY_slds_mod_min_css/slds.min.css');
         .embeddedServiceHelpButton .helpButton .uiButton {
-          background-color: transparent !important;
+          background-color: #005290;
           font-family: "Arial", sans-serif;
         }
 
@@ -266,33 +266,33 @@
         }
 
        button.sidebarHeader.minimizedContainer.embeddedServiceSidebarMinimizedDefaultUI {
-		 background-image: url('https://www.jeep.at/content/dam/omnichannel-aem/cross/livechat/headset_icon_chatbot_jeep.png') !important;
-		 background-position: center;
-		 background-size: 70px;
-		 background-repeat: no-repeat !important;
-		 background-color: transparent !important;
-		 height: 70px !important;
-		 width: 70px !important;
-		 border-radius: 50% !important;
-		 min-height: 60px !important;
-		 min-width: 60px !important;
-		 margin: 30px;
-		 border-style: none;
-		 box-shadow: none !important;
- }
+			 background-image: url('https://www.citroen.be/content/dam/omnichannel-aem/cross/livechat/headset_icon_chatbot_citroen.png') !important;
+			 background-position: center;
+			 background-size: 70px;
+			 background-repeat: no-repeat !important;
+            background-color: transparent !important;
+			 height: 70px !important;
+			 width: 70px !important;
+			 border-radius: 50% !important;
+			 min-height: 60px !important;
+			 min-width: 60px !important;
+			 margin: 30px;
+			 border-style: none;
+			 box-shadow: none !important;
+			 }
 
         .embeddedServiceHelpButton .helpButton .uiButton{
-	    background-image: url('https://www.jeep.at/content/dam/omnichannel-aem/cross/livechat/headset_icon_chatbot_jeep.png') !important;
-	    background-position: center;
-	    background-color: transparent !important;
-	    background-size: 50px;
-	    background-repeat: no-repeat !important;
-	    width: 40px !important;
-	    height: 40px !important;
-	    border-radius: 50% !important;
-	    min-height: 60px !important;
-	    min-width: 60px !important;
-	    box-shadow: none !important;
+			background-image: url('https://www.citroen.be/content/dam/omnichannel-aem/cross/livechat/headset_icon_chatbot_citroen.png') !important;
+			background-position: center;
+			background-color: transparent !important;
+			background-size: 50px;
+			background-repeat: no-repeat !important;
+			width: 40px !important;
+			height: 40px !important;
+			border-radius: 50% !important;
+			min-height: 60px !important;
+			min-width: 60px !important;
+			box-shadow: none !important;
 
         }
 
@@ -322,7 +322,7 @@
 <script type='text/javascript'>
 	var initESW = function(gslbBaseURL) {
 		embedded_svc.settings.displayHelpButton = true; //Or false
-		embedded_svc.settings.language = 'de'; //For example, enter 'en' or 'en-US'
+		embedded_svc.settings.language = 'nl_NL'; //For example, enter 'en' or 'en-US'
 
 		//embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
 		//embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
@@ -344,33 +344,34 @@
 
 		embedded_svc.init(
 			'https://psa-customerfirst.my.salesforce.com',
-			'https://www.customer360psa.com/',
+			'https://citroen.my-customerportal.com/citroen',
 			gslbBaseURL,
 			'00D0O000000YvX4',
-			'Chat_eShop_at_je',
+			'Chat_Store_be_ac',
 			{
 				baseLiveAgentContentURL: 'https://c.la3-c1-cdg.salesforceliveagent.com/content',
 				deploymentId: '572690000010wC9',
-				buttonId: '573690000010wEy',
+				buttonId: '573690000010wF1',
 				baseLiveAgentURL: 'https://d.la3-c1-cdg.salesforceliveagent.com/chat',
-				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I0D0000004CeWUAU_188e397a14b',
+				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I0D0000004CcuUAE_188e35ed375',
 				isOfflineSupportEnabled: false
 			}
 		);
- };
+	};
 
 
+  
 
-		 if (!window.embedded_svc) {
+	 if (!window.embedded_svc) {
 			 var s = document.createElement('script');
 			 s.setAttribute('src', 'https://psa-customerfirst.my.salesforce.com/embeddedservice/5.0/esw.min.js');
 			 s.onload = function() {
 			 initESW(null);
 			 };
 			 document.body.appendChild(s);
-		 } else {
+	 } else {
 			 initESW('https://service.force.com');
-		 }
+	 }
 </script>
 </body>
 </html>
