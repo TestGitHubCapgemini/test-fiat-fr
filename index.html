@@ -216,113 +216,21 @@
       </div>
     </div>
   </div>
-<!-- Embedded Service <-> LWC Wrapper -->
-      <script>
-          window.addEventListener("message", function(event) {
-              var payload = event.data;
-              if (payload && payload.type === "chasitor.sendMessage") {
-                  embedded_svc.postMessage("chasitor.sendMessage", payload.message);
-              }
-          },
-              false
-          );
-      </script>
-
-<!-- Embedded Service ChatBot Styles -->
-      <style type='text/css'>
-        @import url('https://psa-customerfirst--c.visualforce.com/resource/1671057967000/SnY_slds_mod_min_css/slds.min.css');
-        .embeddedServiceHelpButton .helpButton .uiButton {
-          background-color: transparent !important;
-          font-family: "Arial", sans-serif;
-        }
-
-        .embeddedServiceHelpButton .helpButton .uiButton {
-          /* background-color: transparent !important;  */
-          font-family: "Salesforce Sans", sans-serif !important;
-        }
-
-        .embeddedServiceHelpButton .helpButton .uiButton:focus {
-         /* outline: 1px solid #5820D5 !important; */
-        }
-	      
-	      
-         @media only screen and (min-width: 48em) {
-	   .embeddedServiceHelpButton .helpButton .uiButton:hover::before,
-		 .embeddedServiceHelpButton .helpButton .uiButton:focus::before
-		 {
-		border-radius: 50% !important; 
-	     }
-	 }
-  
-
-        @font-face {
-          font-family: 'Salesforce Sans' !important;
-          src: url('https://c1.sfdcstatic.com/etc/clientlibs/sfdc-aem-master/clientlibs_base/fonts/SalesforceSans-Regular.woff') format('woff'),
-            url('https://c1.sfdcstatic.com/etc/clientlibs/sfdc-aem-master/clientlibs_base/fonts/SalesforceSans-Regular.ttf') format('truetype') !important;
-        }
-
-        span.message{
-          display:none;
-        }
-
-       button.sidebarHeader.minimizedContainer.embeddedServiceSidebarMinimizedDefaultUI {
-		 background-image: url('https://www.abarth.at/content/dam/omnichannel-aem/cross/livechat/headset_icon_chatbot_abarth.png') !important;
-		 background-position: center;
-		 background-size: 70px;
-		 background-repeat: no-repeat !important;
-		 background-color: transparent !important;
-		 height: 70px !important;
-		 width: 70px !important;
-		 border-radius: 50% !important;
-		 min-height: 60px !important;
-		 min-width: 60px !important;
-		 margin: 30px;
-		 border-style: none;
-		 box-shadow: none !important;
- }
-
-        .embeddedServiceHelpButton .helpButton .uiButton{
-	    background-image: url('https://www.abarth.at/content/dam/omnichannel-aem/cross/livechat/headset_icon_chatbot_abarth.png') !important;
-	    background-position: center;
-	    background-color: transparent !important;
-	    background-size: 50px;
-	    background-repeat: no-repeat !important;
-	    width: 40px !important;
-	    height: 40px !important;
-	    border-radius: 50% !important;
-	    min-height: 60px !important;
-	    min-width: 60px !important;
-	    box-shadow: none !important;
-
-        }
-
-        @keyframes pulse-blue {
-          0%   {transform: scale(0.95);box-shadow: 0 0 0 0 var(--lwc-colorBackgroundButtonBrand,rgb(0, 163, 224));}
-          70%  {transform: scale(1.0);box-shadow: 0 0 0 20px rgb(0 126 219 / 0%);}
-          100% {transform: scale(0.95);box-shadow: 0 0 0 0 rgb(0 126 219 / 0%);}
-        }
-
-        .embeddedServiceHelpButton .embeddedServiceIcon{
-          visibility : hidden;
-        }
-
-        .embeddedServiceHelpButton .helpButton{
-         /* height : 90px; */
-	    margin-right: 20px;
-	    margin-bottom: 60px;
-        }
-
-        h2[embeddedService-chatHeader_chatHeader] {
-          font-size : 13px !important;
-        }
-      </style>
-
+<style type='text/css'>
+	.embeddedServiceHelpButton .helpButton .uiButton {
+		background-color: #E60019;
+		font-family: "Arial", sans-serif;
+	}
+	.embeddedServiceHelpButton .helpButton .uiButton:focus {
+		outline: 1px solid #E60019;
+	}
+</style>
 
 <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
 <script type='text/javascript'>
 	var initESW = function(gslbBaseURL) {
 		embedded_svc.settings.displayHelpButton = true; //Or false
-		embedded_svc.settings.language = 'de'; //For example, enter 'en' or 'en-US'
+		embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
 
 		//embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
 		//embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
@@ -343,34 +251,32 @@
 		embedded_svc.settings.entryFeature = 'LiveAgent';
 
 		embedded_svc.init(
-			'https://psa-customerfirst.my.salesforce.com',
-			'https://www.customer360psa.com/',
+			'https://psa-customerfirst--devhotfix.sandbox.my.salesforce.com',
+			'https://psa-customerfirst--devhotfix.sandbox.my.site.com/PSADealer',
 			gslbBaseURL,
-			'00D0O000000YvX4',
+			'00D0D0000000P9N',
 			'Chat_eShop_at_ah',
 			{
-				baseLiveAgentContentURL: 'https://c.la3-c1-cdg.salesforceliveagent.com/content',
-				deploymentId: '572690000010wC9',
-				buttonId: '573690000010wEt',
-				baseLiveAgentURL: 'https://d.la3-c1-cdg.salesforceliveagent.com/chat',
+				baseLiveAgentContentURL: 'https://c.la1-c1cs-cdg.salesforceliveagent.com/content',
+				deploymentId: '5720D00000000EI',
+				buttonId: '5730D00000000c0',
+				baseLiveAgentURL: 'https://d.la1-c1cs-cdg.salesforceliveagent.com/chat',
 				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I0D0000004CebUAE_188e398a95d',
 				isOfflineSupportEnabled: false
 			}
 		);
- };
+	};
 
-
-
-		 if (!window.embedded_svc) {
-			 var s = document.createElement('script');
-			 s.setAttribute('src', 'https://psa-customerfirst.my.salesforce.com/embeddedservice/5.0/esw.min.js');
-			 s.onload = function() {
-			 initESW(null);
-			 };
-			 document.body.appendChild(s);
-		 } else {
-			 initESW('https://service.force.com');
-		 }
+	if (!window.embedded_svc) {
+		var s = document.createElement('script');
+		s.setAttribute('src', 'https://psa-customerfirst--devhotfix.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+		s.onload = function() {
+			initESW(null);
+		};
+		document.body.appendChild(s);
+	} else {
+		initESW('https://service.force.com');
+	}
 </script>
 </body>
 </html>
