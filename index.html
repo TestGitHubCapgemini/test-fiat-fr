@@ -343,17 +343,17 @@
 		embedded_svc.settings.entryFeature = 'LiveAgent';
 
 		embedded_svc.init(
-			'https://psa-customerfirst--hotfix1.sandbox.my.salesforce.com',
-			'https://psa-customerfirst--hotfix1.sandbox.my.site.com/vauxhall',
+			'https://psa-customerfirst--marketingb.sandbox.my.salesforce.com',
+			'https://psa-customerfirst--marketingb.sandbox.my.site.com/vauxhall',
 			gslbBaseURL,
-			'00D9E000000A6K7',
-			'UK_VRA_Test',
+			'00D0C0000002E7W',
+			'VRA_VX',
 			{
-				baseLiveAgentContentURL: 'https://c.la2-c1cs-fra.salesforceliveagent.com/content',
-				deploymentId: '5721r0000004Fqg',
-				buttonId: '5739E0000004I7z',
-				baseLiveAgentURL: 'https://d.la2-c1cs-fra.salesforceliveagent.com/chat',
-				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I9E000000CbTEUA0_18a042b8be0',
+				baseLiveAgentContentURL: 'https://c.la1-c1cs-lo2.salesforceliveagent.com/content',
+				deploymentId: '5720C000000CaWv',
+				buttonId: '5730C000000CaWo',
+				baseLiveAgentURL: 'https://d.la1-c1cs-lo2.salesforceliveagent.com/chat',
+				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I0C000000CaUxUAK_1860c30d872',
 				isOfflineSupportEnabled: false
 			}
 		);
@@ -363,7 +363,7 @@
 
 		 if (!window.embedded_svc) {
 			 var s = document.createElement('script');
-			 s.setAttribute('src', 'https://psa-customerfirst--hotfix1.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+			 s.setAttribute('src', 'https://psa-customerfirst--marketingb.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
 			 s.onload = function() {
 			 initESW(null);
 			 };
