@@ -216,16 +216,54 @@
       </div>
     </div>
   </div>
-<style type='text/css'>
-	.embeddedServiceHelpButton .helpButton .uiButton {
-		background-color: #E60019;
-		font-family: "Arial", sans-serif;
-	}
-	.embeddedServiceHelpButton .helpButton .uiButton:focus {
-		outline: 1px solid #E60019;
-	}
-</style>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script type='text/javascript' src='https://service.force.com/embeddedservice/menu/fab.min.js'></script>
 
+<script type='text/javascript' src='https://service.force.com/embeddedservice/menu/fab.min.js'></script>
+<style>
+.embedded-service .fab div[class="icon_fab_container"] > img.esw-custom_icon{
+width : 100% !important;
+}
+button#esw-fab{
+height:80px !important;
+width:80px !important;
+}
+button#esw-fab[aria-expanded="true"]{
+height: 56px !important;
+width: 56px !important;
+bottom: 16px !important;
+}
+.embedded-service #esw-fab.showAnimation{
+animation:channelmenu-rotate-in-2-br-cw 0.5s ease-in both,channelmenu-shadow-pulse 2s infinite;
+}
+.embedded-service .fab div[class="icon_fab_container"] {
+width: 68px !important;
+height: 68px !important;
+background-size: 70px 70px !important;
+}
+
+.embedded-service .channelmenu_header p {
+ color: #FFFFFF !important;
+}
+
+.embedded-service .channelmenu_header h2 {
+ color: #FFFFFF !important;
+}
+	
+button#esw-fab[aria-expanded="true"] {	
+    height: 56px !important;
+    width: 56px !important;
+    bottom: 16px !important;
+    right: 30px;
+}
+
+button#esw-fab[aria-expanded="false"] {	
+    top: 50%;			
+    right: 40em;
+}
+	
+</style>
 <style type='text/css'>
 	.embeddedServiceHelpButton .helpButton .uiButton {
 		background-color: #F7FF14;
@@ -239,23 +277,23 @@
 <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
 <script type='text/javascript'>
 	var initESW = function(gslbBaseURL) {
-		embedded_svc.settings.displayHelpButton = true; //Or false
-		embedded_svc.settings.language = 'de'; //For example, enter 'en' or 'en-US'
+		embedded_svc.settings.displayHelpButton = true; //O falso
+		embedded_svc.settings.language = ''; //Ad esempio, immettere 'en' o 'en-US'
 
-		//embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
-		//embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
+		//embedded_svc.settings.defaultMinimizedText = '...'; //(Per impostazione predefinita viene usato Chatta con un esperto)
+		//embedded_svc.settings.disabledMinimizedText = '...'; //(Per impostazione predefinita viene usato Agente offline)
 
-		//embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
-		//embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
+		//embedded_svc.settings.loadingText = ''; //(Per impostazione predefinita viene usato Caricamento)
+		//embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Imposta il dominio per la propria distribuzione in modo che i visitatori possano spostarsi all'interno dei sottodomini durante una sessione di chat)
 
-		// Settings for Chat
+		// Impostazioni per Chat
 		//embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
 			// Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
 			// Returns a valid button ID.
 		//};
-		//embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
-		//embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
-		//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
+		//embedded_svc.settings.prepopulatedPrechatFields = {}; //Imposta l'autocompilazione dei campo del modulo pre-chat
+		//embedded_svc.settings.fallbackRouting = []; //Un array di ID pulsante, ID utente o userId_buttonId
+		//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Per impostazione predefinita viene usato Contattaci)
 
 		embedded_svc.settings.enabledFeatures = ['LiveAgent'];
 		embedded_svc.settings.entryFeature = 'LiveAgent';
