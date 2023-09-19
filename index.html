@@ -328,7 +328,17 @@
       </style>
 
 
-<script type='text/javascript' src='https://service.force.com/embeddedservice/menu/fab.min.js'></script>
+<style type='text/css'>
+	.embeddedServiceHelpButton .helpButton .uiButton {
+		background-color: #005290;
+		font-family: "Arial", sans-serif;
+	}
+	.embeddedServiceHelpButton .helpButton .uiButton:focus {
+		outline: 1px solid #005290;
+	}
+</style>
+
+<script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
 <script type='text/javascript'>
 	var initESW = function(gslbBaseURL) {
 		embedded_svc.settings.displayHelpButton = true; //Or false
@@ -369,8 +379,7 @@
 		);
 	};
 
-
-	if (!window.embedded_svc || !window.embedded_svc.menu) {
+	if (!window.embedded_svc) {
 		var s = document.createElement('script');
 		s.setAttribute('src', 'https://psa-customerfirst--dev01.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
 		s.onload = function() {
