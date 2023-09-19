@@ -226,9 +226,9 @@
 	}
 </style>
 
-<!-- Embedded Service <-> LWC Wrapper -->
+ <!-- Embedded Service <-> LWC Wrapper -->
       <script>
-          window.addEventListener("message", function(event) {
+          window.addEventListener("message", function() {
               var payload = event.data;
               if (payload && payload.type === "chasitor.sendMessage") {
                   embedded_svc.postMessage("chasitor.sendMessage", payload.message);
@@ -240,14 +240,14 @@
 
 <!-- Embedded Service ChatBot Styles -->
       <style type='text/css'>
-        @import url('https://psa-customerfirst--preprod--c.sandbox.vf.force.com/resource/1670933538000/SnY_slds_mod_min_css/slds.min.css');
+        @import url('https://psa-customerfirst--marketingb.sandbox.my.site.com/opel/resource/1673468055000/SnY_slds_mod_min_css/slds.min.css');
         .embeddedServiceHelpButton .helpButton .uiButton {
-          background-color: transparent !important;
+          background-color: #005290;
           font-family: "Arial", sans-serif;
         }
 
         .embeddedServiceHelpButton .helpButton .uiButton {
-          /* background-color: transparent !important;  */
+          /* background-color: #5820D5 !important;  */
           font-family: "Salesforce Sans", sans-serif !important;
         }
 
@@ -276,25 +276,25 @@
         }
 
        button.sidebarHeader.minimizedContainer.embeddedServiceSidebarMinimizedDefaultUI {
-		 background-image: url('https://www.abarth.at/content/dam/omnichannel-aem/cross/livechat/headset_icon_chatbot_abarth.png') !important;
-		 background-position: center;
-		 background-size: 70px;
-		 background-repeat: no-repeat !important;
-		 background-color: transparent !important;
-		 height: 70px !important;
-		 width: 70px !important;
-		 border-radius: 50% !important;
-		 min-height: 60px !important;
-		 min-width: 60px !important;
-		 margin: 30px;
-		 border-style: none;
-		 box-shadow: none !important;
- }
+            background-image: url('https://psa-customerfirst--preprod--c.sandbox.vf.force.com/resource/1683797422000/headset_icon_chatbot_fiat') !important;
+            background-position: center;
+            background-size: 70px;
+            background-repeat: no-repeat !important;
+            background-color: #5820D5 !important;
+            height: 70px !important;
+            width: 70px !important;
+            border-radius: 50% !important;
+            min-height: 60px !important;
+            min-width: 60px !important;
+            margin: 30px;
+            border-style: none;
+            box-shadow: none !important;
+        }
 
         .embeddedServiceHelpButton .helpButton .uiButton{
-	    background-image: url('https://www.abarth.at/content/dam/omnichannel-aem/cross/livechat/headset_icon_chatbot_abarth.png') !important;
+	    background-image: url('https://psa-customerfirst--preprod--c.sandbox.vf.force.com/resource/1683797422000/headset_icon_chatbot_fiat') !important;
 	    background-position: center;
-	    background-color: transparent !important;
+	    background-color: #5820D5 !important;
 	    background-size: 50px;
 	    background-repeat: no-repeat !important;
 	    width: 40px !important;
@@ -331,21 +331,48 @@
 <script type='text/javascript' src='https://service.force.com/embeddedservice/menu/fab.min.js'></script>
 <script type='text/javascript'>
 	var initESW = function(gslbBaseURL) {
-		// Required if you want labels in a language that’s different from your user’s context.
-		embedded_svc.menu.settings.language = 'es'; //For example, enter 'en' or 'en-US'
+		embedded_svc.settings.displayHelpButton = true; //Or false
+		embedded_svc.settings.language = 'it'; //For example, enter 'en' or 'en-US'
 
-		embedded_svc.menu.init(
+		//embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
+		//embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
+
+		//embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
+		//embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
+
+		// Settings for Chat
+		//embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
+			// Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
+			// Returns a valid button ID.
+		//};
+		//embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
+		//embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
+		//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
+
+		embedded_svc.settings.enabledFeatures = ['LiveAgent'];
+		embedded_svc.settings.entryFeature = 'LiveAgent';
+
+		embedded_svc.init(
 			'https://psa-customerfirst--dev01.sandbox.my.salesforce.com',
-			'https://d.la1-c1cs-cdg.salesforceliveagent.com/chat',
+			'https://psa-customerfirst--dev01.sandbox.my.site.com/PSADealer',
 			gslbBaseURL,
 			'00D0D0000008ils',
-			'ES_Citroen_SOL'
+			'Chat_Topolino_IT',
+			{
+				baseLiveAgentContentURL: 'https://c.la1-c1cs-cdg.salesforceliveagent.com/content',
+				deploymentId: '57269000000sXvf',
+				buttonId: '57369000000sXyl',
+				baseLiveAgentURL: 'https://d.la1-c1cs-cdg.salesforceliveagent.com/chat',
+				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I0D000000CairUAC_18aac97b629',
+				isOfflineSupportEnabled: false
+			}
 		);
 	};
 
+
 	if (!window.embedded_svc || !window.embedded_svc.menu) {
 		var s = document.createElement('script');
-		s.setAttribute('src', 'https://psa-customerfirst--dev01.sandbox.my.salesforce.com/embeddedservice/menu/fab.min.js');
+		s.setAttribute('src', 'https://psa-customerfirst--dev01.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
 		s.onload = function() {
 			initESW(null);
 		};
