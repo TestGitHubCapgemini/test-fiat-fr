@@ -333,7 +333,7 @@ h2[embeddedService-chatHeader_chatHeader] {
 <script type='text/javascript'>
 var initESW = function(gslbBaseURL) {
     embedded_svc.settings.displayHelpButton = true; //Or false
-    embedded_svc.settings.language = 'en'; //For example, enter 'en' or 'en-US'
+    embedded_svc.settings.language = 'it'; //For example, enter 'en' or 'en-US'
 
     //embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
     //embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
@@ -354,17 +354,17 @@ var initESW = function(gslbBaseURL) {
     embedded_svc.settings.entryFeature = 'LiveAgent';
 
 		embedded_svc.init(
-			'https://psa-customerfirst--dev02.sandbox.my.salesforce.com',
-			'https://psa-customerfirst--dev02.sandbox.my.site.com/citroen',
+			'https://psa-customerfirst--hotfix.sandbox.my.salesforce.com',
+			'https://psa-customerfirst--hotfix.sandbox.my.site.com/PSADealer',
 			gslbBaseURL,
-			'00D7Z00000054AZ',
-			'UK_Chat_Citroen_BrandSite',
+			'00D1x000000KYS3',
+			'Chat_Topolino_IT',
 			{
-				baseLiveAgentContentURL: 'https://c.la3-c1cs-fra.salesforceliveagent.com/content',
-				deploymentId: '5721r0000004Fqg',
-				buttonId: '57369000000PT68',
-				baseLiveAgentURL: 'https://d.la3-c1cs-fra.salesforceliveagent.com/chat',
-				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I0E000000CbauUAC_183fa782b83',
+				baseLiveAgentContentURL: 'https://c.la1-c1cs-fra.salesforceliveagent.com/content',
+				deploymentId: '57269000000sXvf',
+				buttonId: '5731x0000004EaS',
+				baseLiveAgentURL: 'https://d.la1-c1cs-fra.salesforceliveagent.com/chat',
+				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I0D000000CairUAC_18aac97b629',
 				isOfflineSupportEnabled: false
 			}
 		);
@@ -372,7 +372,7 @@ var initESW = function(gslbBaseURL) {
 
 if (!window.embedded_svc) {
     var s = document.createElement('script');
-    s.setAttribute('src', 'https://psa-customerfirst--dev02.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+    s.setAttribute('src', 'https://psa-customerfirst--hotfix.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
     s.onload = function() {
         initESW(null);
     };
