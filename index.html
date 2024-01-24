@@ -216,8 +216,9 @@
       </div>
     </div>
   </div>
+	
 <!-- Embedded Service <-> LWC Wrapper -->
-      <script>
+     <!-- <script>
           window.addEventListener("message", () => {
               var payload = event.data;
               if (payload && payload.type === "chasitor.sendMessage") {
@@ -226,10 +227,10 @@
           },
               false
           );
-      </script>
+      </script>-->
 
 <!-- Embedded Service ChatBot Styles -->
-      <style type='text/css'>
+   <!--   <style type='text/css'>
 @import url('https://raw.githack.com/TestGitHubCapgemini/amm-fiat-it/main/slds.min.css');
 
 .embeddedServiceHelpButton .helpButton .uiButton {
@@ -328,7 +329,7 @@ h2[embeddedService-chatHeader_chatHeader] {
 }
       </style>
 
-
+-->
 <script type='text/javascript' src='https://service.force.com/embeddedservice/menu/fab.min.js'></script>
 <style>
 
@@ -345,6 +346,8 @@ h2[embeddedService-chatHeader_chatHeader] {
 	position : static;
 	padding : 1px 6px;
 }
+
+.embeddedService-chatHeader_chatHeader .button, button {padding:revert; position:revert}/* Sets the header minimise and close buttons to correct position to make them visible */ 
   
 .embeddedServiceSidebar.layout-float .dockableContainer {
 	z-index: 5000;
