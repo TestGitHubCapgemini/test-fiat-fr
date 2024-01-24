@@ -431,26 +431,7 @@ var regexp = /(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|com
 
 // Using test() method to search regexp in details
 var isMobileDevice = regexp.test(details);
-if (isMobileDevice) {
-        console.log('inside mobile');
-		var style = document.createElement('style');
-			style.innerHTML = '.embeddedServiceHelpButton .uiButton{ height: 80px !important;min-width: 80px !important;width:80px;border-radius: 50% !important;bottom: 100px !important;right:20px !important;background-image: url(https://psa-customerfirst.file.force.com/servlet/servlet.ImageServer?id=01569000009M9Be&oid=00D0O000000YvX4&lastMod=1704975659000) !important;border: 5px solid var(--lwc-colorBackgroundButtonBrand,rgb(0, 163, 224));background-repeat: no-repeat !important;background-size: 70px 70px !important;}';
-			style.innerHTML += '.embeddedServiceHelpButton .embeddedServiceIcon{ display : none !important}';
-			style.innerHTML += 'span.message{display : none !important}';
-			style.innerHTML += '.embeddedServiceSidebarMinimizedDefaultUI{height: 80px !important;min-width: 80px !important;width:80px;border-radius: 50% !important;bottom: 100px !important;right:20px !importantbackground-image: url(https://psa-customerfirst.file.force.com/servlet/servlet.ImageServer?id=01569000009M9Be&oid=00D0O000000YvX4&lastMod=1704975659000) !important;border: 5px solid var(--lwc-colorBackgroundButtonBrand,rgb(0, 163, 224));background-repeat: no-repeat !important;background-size: 70px 70px !important;}';
-			style.innerHTML += '.embeddedServiceHelpButton .helpButton .uiButton:hover::before, .embeddedServiceHelpButton .helpButton .uiButton:focus::before{display:none}';
-			document.body.appendChild(style);
-} else {
-        console.log('inside desktop');
-        var style = document.createElement('style');
-			style.innerHTML = '.embeddedServiceHelpButton .uiButton{ height: 80px !important;min-width: 80px !important;width:80px;border-radius: 50% !important;bottom: 90px !important;right:60px !important;background-image: url(https://psa-customerfirst.file.force.com/servlet/servlet.ImageServer?id=01569000009M9Be&oid=00D0O000000YvX4&lastMod=1704975659000) !important;border: 5px solid var(--lwc-colorBackgroundButtonBrand,rgb(0, 163, 224));background-repeat: no-repeat !important;background-size: 70px 70px !important;}';
-			style.innerHTML += '.embeddedServiceHelpButton .embeddedServiceIcon{ display : none !important}';
-			style.innerHTML += 'span.message{display : none !important}';
-			style.innerHTML += '.embeddedServiceSidebarMinimizedDefaultUI{height: 80px !important;min-width: 80px !important;width:80px;border-radius: 50% !important;bottom: 90px !important;right:60px !important;background-image: url(https://psa-customerfirst.file.force.com/servlet/servlet.ImageServer?id=01569000009M9Be&oid=00D0O000000YvX4&lastMod=1704975659000) !important;border: 5px solid var(--lwc-colorBackgroundButtonBrand,rgb(0, 163, 224));background-repeat: no-repeat !important;background-size: 70px 70px !important;}';
-			style.innerHTML += '.embeddedServiceHelpButton .helpButton .uiButton:hover::before, .embeddedServiceHelpButton .helpButton .uiButton:focus::before{display:none}';
-			style.innerHTML += '.embeddedServiceHelpButton .helpButton {bottom:90px;right: 0px;}';
-			document.body.appendChild(style);
-}
+
 
 if (!window.embedded_svc || !window.embedded_svc.menu) {
     var s = document.createElement('script');
