@@ -332,7 +332,6 @@ h2[embeddedService-chatHeader_chatHeader] {
 -->
 <script type='text/javascript' src='https://service.force.com/embeddedservice/menu/fab.min.js'></script>
 <style>
-
  .label{
     background-color: transparent;
     font-family: var(--lwc-fontFamily,"Arial"),sans-serif;
@@ -352,6 +351,11 @@ h2[embeddedService-chatHeader_chatHeader] {
 .embeddedServiceSidebar.layout-float .dockableContainer {
 	z-index: 5000;
 }
+
+.embeddedServiceSidebarMinimizedFabDefaultUI.newMessage {
+	padding: 0 !important;
+}
+
 
 .embedded-service .fab {
 	z-index: 5000;
@@ -407,9 +411,8 @@ background-size: 70px 70px !important;
 .embedded-service .fab:focus {
     box-shadow: 0 0 0px 0px transparent; 
 }
-
 .embedded-service .fab div[class="icon_fab_container"] {
-    background-color: black  !important;
+    background-color: #DA291C  !important;
     border-radius: 50%  !important;
     scale: 0.8  !important;
 	position: fixed  !important;
@@ -436,8 +439,8 @@ button#esw-fab{
 
 
 .embeddedServiceSidebarMinimizedFabDefaultUI button.fab {
-    background-image: url(https://psa-customerfirst.file.force.com/servlet/servlet.ImageServer?id=01569000009M9Be&oid=00D0O000000YvX4&lastMod=1704975659000)  !important;
-    background-size: 43px  !important;
+    background-image: url(https://psa-customerfirst.file.force.com/servlet/servlet.ImageServer?id=01569000009MBfH&oid=00D0O000000YvX4&lastMod=1706182441000)  !important;
+    background-size: 24px  !important;
     background-repeat: no-repeat  !important;
     background-position: center  !important;
 }
