@@ -415,17 +415,17 @@ background-size: 70px 70px !important;
 		embedded_svc.menu.settings.language = 'es'; //For example, enter 'en' or 'en-US'
 
 		embedded_svc.menu.init(
-			'https://psa-customerfirst--dev02.sandbox.my.salesforce.com',
-			'https://d.la3-c1cs-fra.salesforceliveagent.com/chat',
+			'https://psa-customerfirst--kang.sandbox.my.salesforce.com',
+			'https://d.la1-c1cs-lo3.salesforceliveagent.com/chat',
 			gslbBaseURL,
-			'00D7Z00000054AZ',
+			'00D3L00000011rz',
 			'ES_TOPOLINO'
 		);
 	};
 
 	if (!window.embedded_svc || !window.embedded_svc.menu) {
 		var s = document.createElement('script');
-		s.setAttribute('src', 'https://psa-customerfirst--dev02.sandbox.my.salesforce.com/embeddedservice/menu/fab.min.js');
+		s.setAttribute('src', 'https://psa-customerfirst--kang.sandbox.my.salesforce.com/embeddedservice/menu/fab.min.js');
 		s.onload = function() {
 			initESW(null);
 		};
