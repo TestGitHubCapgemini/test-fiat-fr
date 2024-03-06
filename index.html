@@ -1,8 +1,10 @@
+
+<!-- Embedded Service <-> LWC Wrapper -->
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Tech News</title>
+  <title>Prueba superchat</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
     /* Estilos personalizados */
@@ -216,10 +218,9 @@
       </div>
     </div>
   </div>
-	
 <!-- Embedded Service <-> LWC Wrapper -->
-     <!-- <script>
-          window.addEventListener("message", () => {
+      <script>
+          window.addEventListener("message", function(event) {
               var payload = event.data;
               if (payload && payload.type === "chasitor.sendMessage") {
                   embedded_svc.postMessage("chasitor.sendMessage", payload.message);
@@ -227,205 +228,315 @@
           },
               false
           );
-      </script>-->
-
+      </script>
+	<link rel="stylesheet" href="https://raw.githack.com/TestGitHubCapgemini/frg-it-fiat/main/slds.min.css">
 <!-- Embedded Service ChatBot Styles -->
-   <!--   <style type='text/css'>
-@import url('https://raw.githack.com/TestGitHubCapgemini/amm-fiat-it/main/slds.min.css');
+      <style type='text/css'>
 
-.embeddedServiceHelpButton .helpButton .uiButton {
-    background-color: #005290;
-    font-family: "Arial", sans-serif;
+	/*<!-- Css prueba calendar -->*/
+	      .slds-timeline__item_expandable .slds-timeline__actions_inline .slds-timeline__date {
+  padding-right: .5rem;
+  margin-bottom: 0
+}
+.slds-timeline__date {
+  margin-bottom: .25rem;
+  font-size: .75rem;
+  color: #444
+}
+.slds-icon-standard-date-input {
+  background-color: var(--slds-c-icon-color-background, var(--sds-c-icon-color-background, #969492))
+}
+.slds-icon-standard-date-time {
+  background-color: var(--slds-c-icon-color-background, var(--sds-c-icon-color-background, #969492))
+}
+.slds-datepicker td.slds-is-today>.slds-day,
+.slds-datepicker td:focus:not(.slds-disabled-text)>.slds-day,
+.slds-datepicker td:hover:not(.slds-disabled-text)>.slds-day {
+  cursor: pointer
 }
 
-.embeddedServiceHelpButton .helpButton .uiButton {
-    /* background-color: #5820D5 !important;  */
-    font-family: "Salesforce Sans", sans-serif !important;
+.slds-datepicker {
+  padding: 0;
+  font-size: .75rem
 }
 
-.embeddedServiceHelpButton .helpButton .uiButton:focus {
-    /* outline: 1px solid #5820D5 !important; */
+.slds-datepicker tbody>tr>td,
+.slds-datepicker thead>tr>th {
+  text-align: center
 }
 
-
-@media only screen and (min-width: 48em) {
-
-    .embeddedServiceHelpButton .helpButton .uiButton:hover::before,
-    .embeddedServiceHelpButton .helpButton .uiButton:focus::before {
-        border-radius: 50% !important;
-    }
+.slds-datepicker thead>tr>th {
+  padding: .5rem;
+  font-weight: 400;
+  color: #444
 }
 
-
-@font-face {
-    font-family: 'Salesforce Sans' !important;
-    src: url('https://c1.sfdcstatic.com/etc/clientlibs/sfdc-aem-master/clientlibs_base/fonts/SalesforceSans-Regular.woff') format('woff'),
-        url('https://c1.sfdcstatic.com/etc/clientlibs/sfdc-aem-master/clientlibs_base/fonts/SalesforceSans-Regular.ttf') format('truetype') !important;
+.slds-datepicker tbody>tr>td {
+  padding: .25rem;
+  font-size: .75rem
 }
 
-span.message {
-    display: none;
+.slds-datepicker tbody>tr>td>.slds-day {
+  width: 2rem;
+  height: 2rem;
+  display: block;
+  position: relative;
+  min-width: 2rem;
+  line-height: 2rem;
+  border-radius: 50%;
+  margin: auto
 }
 
-button.sidebarHeader.minimizedContainer.embeddedServiceSidebarMinimizedDefaultUI {
-    background-image: url('https://www.fiat.be/content/dam/omnichannel-aem/cross/livechat/headset_icon_chatbot_fiat.png') !important;
-    background-position: center;
-    background-size: 70px;
-    background-repeat: no-repeat !important;
-    background-color: #5820D5 !important;
-    height: 70px !important;
-    width: 70px !important;
-    border-radius: 50% !important;
-    min-height: 60px !important;
-    min-width: 60px !important;
-    margin: 30px;
-    border-style: none;
-    box-shadow: none !important;
+.slds-datepicker tbody>tr>td.slds-is-today>.slds-day,
+.slds-datepicker tbody>tr>td:focus>.slds-day,
+.slds-datepicker tbody>tr>td:hover>.slds-day {
+  cursor: pointer
+}
+.slds-datepicker tbody>tr>td.slds-is-today>.slds-day {
+  background-color: #f3f3f3
 }
 
-.embeddedServiceHelpButton .helpButton .uiButton {
-    background-image: url('https://www.fiat.be/content/dam/omnichannel-aem/cross/livechat/headset_icon_chatbot_fiat.png') !important;
-    background-position: center;
-    background-color: #5820D5 !important;
-    background-size: 50px;
-    background-repeat: no-repeat !important;
-    width: 40px !important;
-    height: 40px !important;
-    border-radius: 50% !important;
-    min-height: 60px !important;
-    min-width: 60px !important;
-    box-shadow: none !important;
+.slds-datepicker tbody>tr>td:focus {
+  outline: 0
 }
 
-@keyframes pulse-blue {
-    0% {
-        transform: scale(0.95);
-        box-shadow: 0 0 0 0 var(--lwc-colorBackgroundButtonBrand, rgb(0, 163, 224));
-    }
-
-    70% {
-        transform: scale(1.0);
-        box-shadow: 0 0 0 20px rgb(0 126 219 / 0%);
-    }
-
-    100% {
-        transform: scale(0.95);
-        box-shadow: 0 0 0 0 rgb(0 126 219 / 0%);
-    }
+.slds-datepicker tbody>tr>td:focus>.slds-day {
+  -webkit-box-shadow: #0176d3 0 0 0 1px inset;
+  box-shadow: #0176d3 0 0 0 1px inset
 }
 
-.embeddedServiceHelpButton .embeddedServiceIcon {
-    visibility: hidden;
+.slds-datepicker tbody>tr>td:hover>.slds-day {
+  background-color: #f3f3f3
 }
 
-.embeddedServiceHelpButton .helpButton {
-    /* height : 90px; */
-    margin-right: 20px;
-    margin-bottom: 60px;
+.slds-datepicker tbody>tr>td.slds-is-selected>.slds-day {
+  background: #0176d3;
+  color: #fff
 }
 
-h2[embeddedService-chatHeader_chatHeader] {
-    font-size: 13px !important;
+.slds-datepicker tbody>tr>td.slds-is-selected:focus>.slds-day {
+  background: #014486;
+  -webkit-box-shadow: #014486 0 0 3px;
+  box-shadow: #014486 0 0 3px;
+  color: #fff
 }
+
+.slds-datepicker__filter {
+  padding: .25rem
+}
+
+.slds-datepicker__filter--month,
+.slds-datepicker__filter_month {
+  padding: 0 .25rem 0 0
+}
+
+.slds-datepicker__month {
+  font-size: .75rem
+}
+
+.slds-has-error .slds-datepicker__filter .slds-select {
+  border: 1px solid #c9c9c9;
+  -webkit-box-shadow: none;
+  box-shadow: none
+}
+
+.slds-day_adjacent-month {
+  color: #747474
+}
+
+.slds-table .slds-datepicker .slds-datepicker__month tbody>tr:hover>td {
+  background-color: unset
+}
+
+.slds-datepicker .slds-has-multi-selection .slds-is-selected-multi:last-child>.slds-day:after {
+  left: auto;
+  right: 0;
+  -webkit-transform: translateX(.25rem);
+  transform: translateX(.25rem)
+}
+
+.slds-datepicker .slds-has-multi-row-selection .slds-is-selected-multi:first-child>.slds-day:before,
+.slds-datepicker .slds-has-multi-row-selection .slds-is-selected-multi:last-child>.slds-day:after {
+  content: "";
+  position: absolute;
+  background: #0176d3;
+  top: 0;
+  left: -50%;
+  height: 100%;
+  width: 2.5rem;
+  -webkit-transform: translateX(-.5rem);
+  transform: translateX(-.5rem);
+  z-index: -1
+}
+
+.slds-datepicker .slds-has-multi-row-selection .slds-is-selected-multi:first-child>.slds-day:before {
+  left: 0;
+  -webkit-transform: translateX(-.25rem);
+  transform: translateX(-.25rem)
+}
+
+.slds-datepicker .slds-has-multi-row-selection .slds-is-selected-multi:last-child>.slds-day:after {
+  left: auto;
+  right: 0;
+  -webkit-transform: translateX(.25rem);
+  transform: translateX(.25rem)
+}
+
+.slds-datepicker td.slds-is-selected-multi>.slds-day {
+  overflow: visible
+}
+
+.slds-datepicker td.slds-is-selected-multi.slds-is-today>.slds-day {
+  -webkit-box-shadow: #fff 0 0 0 1px inset;
+  box-shadow: #fff 0 0 0 1px inset
+}
+
+.slds-datepicker td.slds-is-selected-multi+.slds-is-selected-multi>.slds-day:before {
+  content: "";
+  position: absolute;
+  background: #0176d3;
+  top: 0;
+  left: -50%;
+  height: 100%;
+  width: 2.5rem;
+  -webkit-transform: translateX(-.5rem);
+  transform: translateX(-.5rem);
+  z-index: -1
+}
+
+.slds-datepicker--time,
+.slds-datepicker_time {
+  max-width: 12rem;
+  max-height: 13.5rem;
+  overflow-x: hidden;
+  overflow-y: auto
+}
+
+.slds-datepicker--time__list>li,
+.slds-datepicker_time__list>li {
+  white-space: nowrap;
+  padding: .5rem;
+  padding-left: 2rem;
+  padding-right: 2rem
+}
+
+.slds-datepicker--time__list>li:focus,
+.slds-datepicker--time__list>li:hover,
+.slds-datepicker_time__list>li:focus,
+.slds-datepicker_time__list>li:hover {
+  background: #f3f3f3;
+  text-decoration: none;
+  cursor: pointer
+}
+
+	/*<!-- Css prueba calendar-->*/
+	      
+       /* @import url('https://github.com/TestGitHubCapgemini/frg-it-fiat/tree/main/slds.min.css');*/
+        .embeddedServiceHelpButton .helpButton .uiButton {
+          background-color: transparent !important;
+          font-family: "Arial", sans-serif;
+        }
+
+        .embeddedServiceHelpButton .helpButton .uiButton {
+          /* background-color: transparent !important;  */
+          font-family: "Salesforce Sans", sans-serif !important;
+        }
+
+        .embeddedServiceHelpButton .helpButton .uiButton:focus {
+         /* outline: 1px solid #5820D5 !important; */
+        }
+	      
+	      
+         @media only screen and (min-width: 48em) {
+	   .embeddedServiceHelpButton .helpButton .uiButton:hover::before,
+		 .embeddedServiceHelpButton .helpButton .uiButton:focus::before
+		 {
+		border-radius: 50% !important; 
+	     }
+	 }
+  
+
+        @font-face {
+          font-family: 'Salesforce Sans' !important;
+          src: url('https://c1.sfdcstatic.com/etc/clientlibs/sfdc-aem-master/clientlibs_base/fonts/SalesforceSans-Regular.woff') format('woff'),
+            url('https://c1.sfdcstatic.com/etc/clientlibs/sfdc-aem-master/clientlibs_base/fonts/SalesforceSans-Regular.ttf') format('truetype') !important;
+        }
+
+        span.message{
+          display:none;
+        }
+
+       button.sidebarHeader.minimizedContainer.embeddedServiceSidebarMinimizedDefaultUI {
+		 background-image: url('https://www.jeep.at/content/dam/omnichannel-aem/cross/livechat/headset_icon_chatbot_jeep.png') !important;
+		 background-position: center;
+		 background-size: 70px;
+		 background-repeat: no-repeat !important;
+		 background-color: transparent !important;
+		 height: 70px !important;
+		 width: 70px !important;
+		 border-radius: 50% !important;
+		 min-height: 60px !important;
+		 min-width: 60px !important;
+		 margin: 30px;
+		 border-style: none;
+		 box-shadow: none !important;
+ }
+
+        .embeddedServiceHelpButton .helpButton .uiButton{
+	    background-image: url('https://www.jeep.at/content/dam/omnichannel-aem/cross/livechat/headset_icon_chatbot_jeep.png') !important;
+	    background-position: center;
+	    background-color: transparent !important;
+	    background-size: 50px;
+	    background-repeat: no-repeat !important;
+	    width: 40px !important;
+	    height: 40px !important;
+	    border-radius: 50% !important;
+	    min-height: 60px !important;
+	    min-width: 60px !important;
+	    box-shadow: none !important;
+
+        }
+
+        @keyframes pulse-blue {
+          0%   {transform: scale(0.95);box-shadow: 0 0 0 0 var(--lwc-colorBackgroundButtonBrand,rgb(0, 163, 224));}
+          70%  {transform: scale(1.0);box-shadow: 0 0 0 20px rgb(0 126 219 / 0%);}
+          100% {transform: scale(0.95);box-shadow: 0 0 0 0 rgb(0 126 219 / 0%);}
+        }
+
+        .embeddedServiceHelpButton .embeddedServiceIcon{
+          visibility : hidden;
+        }
+
+        .embeddedServiceHelpButton .helpButton{
+         /* height : 90px; */
+	    margin-right: 20px;
+	    margin-bottom: 60px;
+        }
+
+        h2[embeddedService-chatHeader_chatHeader] {
+          font-size : 13px !important;
+        }
       </style>
 
---><script type='text/javascript' src='https://service.force.com/embeddedservice/menu/fab.min.js'></script>
-<style>
-.embeddedService-chatHeader_chatHeader .button, button {padding:revert; position:revert}/* Sets the header minimise and close buttons to correct position to make them visible */ 
 
-.embedded-service .fab div[class="icon_fab_container"] > svg.esw-default_icon {
-    background-color: #BA0816 !important;
-    border-radius: 50% !important;
-    padding: 8px !important;
-    scale: 2 !important;
-    width: auto;
-}
- .embedded-service .label{
-    background-color: transparent;
-    text-transform: uppercase;
-    text-align: center;
-    font-weight: normal;
-  }  
-  button[embeddedService-chatHeader_chatHeader]{
-	margin : 0em;
-	position : static;
-	padding : 1px 6px;
-}
-  
-.embeddedServiceSidebar.layout-float .dockableContainer {
-	z-index: 5000;
-}
-
-.embedded-service .fab {
-	z-index: 5000;
-}
-
-.embedded-service .channelmenu {
-	z-index: 5000;
-}
-
-.embedded-service .fab div[class="icon_fab_container"] > img.esw-custom_icon{
-width : 100% !important;
-}
-button#esw-fab{
-height:80px !important;
-width:80px !important;
-background-color: transparent;
-}
-button#esw-fab[aria-expanded="true"]{
-height: 56px !important;
-width: 56px !important;
-bottom: 16px !important;
-}
-
-.embedded-service .fab div[class="icon_fab_container"] {
-width: 68px !important;
-height: 68px !important;
-background-size: 70px 70px !important;
-}
-
-.embedded-service .fab:hover:before, .embedded-service .fab:focus:before {
-
-    background-color: transparent;
-    opacity: 0;
-
-}
-
-.embedded-service .fab {
-
-    box-shadow: 0px 0px 0px 0 rgba(45,45,45,0.5);
-
-}
-  
-.embedded-service #esw-fab.showAnimation {
-    transform: translate3d(0,0,0);
-    -webkit-animation: channelmenu-rotate-in-0-br-cw 0.0s ease-in both,channelmenu-shadow-pulse 0s 0s 0;
-    animation: channelmenu-rotate-in-0-br-cw 0.0s ease-in both,channelmenu-shadow-pulse 0s 0s 0;
-}
-  
-.embedded-service .fab:focus {
-    box-shadow: 0 0 0px 0px transparent; 
-}
-
-</style>
-
+<script type='text/javascript' src='https://service.force.com/embeddedservice/menu/fab.min.js'></script>
 <script type='text/javascript'>
 	var initESW = function(gslbBaseURL) {
 		// Required if you want labels in a language that’s different from your user’s context.
-		embedded_svc.menu.settings.language = 'es'; //For example, enter 'en' or 'en-US'
+		embedded_svc.menu.settings.language = 'it'; //For example, enter 'en' or 'en-US'
 
 		embedded_svc.menu.init(
-			'https://psa-customerfirst--vision.sandbox.my.salesforce.com',
-			'https://d.la2-c1cs-fra.salesforceliveagent.com/chat',
+			'https://psa-customerfirst--dev03.sandbox.my.salesforce.com',
+			'https://d.la3-c1cs-fra.salesforceliveagent.com/chat',
 			gslbBaseURL,
-			'00D3N000000HL93',
-			'ES_TOPOLINO'
+			'00D7Z00000054Zp',
+			'Bot_IT_AP'
 		);
 	};
 
 	if (!window.embedded_svc || !window.embedded_svc.menu) {
 		var s = document.createElement('script');
-		s.setAttribute('src', 'https://psa-customerfirst--vision.sandbox.my.salesforce.com/embeddedservice/menu/fab.min.js');
+		s.setAttribute('src', 'https://psa-customerfirst--dev03.sandbox.my.salesforce.com/embeddedservice/menu/fab.min.js');
 		s.onload = function() {
 			initESW(null);
 		};
@@ -434,6 +545,5 @@ background-size: 70px 70px !important;
 		initESW('https://service.force.com');
 	}
 </script>
-
 </body>
 </html>
