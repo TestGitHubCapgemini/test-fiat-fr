@@ -4,7 +4,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Prueba superchat</title>
+  <title>Topolino FR</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
     /* Estilos personalizados */
@@ -52,7 +52,7 @@
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Tech News</a>
+    <a class="navbar-brand" href="#">Topolino FR</a>
   </nav>
   
   <div class="container">
@@ -218,325 +218,24 @@
       </div>
     </div>
   </div>
-<!-- Embedded Service <-> LWC Wrapper -->
-      <script>
-          window.addEventListener("message", function(event) {
-              var payload = event.data;
-              if (payload && payload.type === "chasitor.sendMessage") {
-                  embedded_svc.postMessage("chasitor.sendMessage", payload.message);
-              }
-          },
-              false
-          );
-      </script>
-	<link rel="stylesheet" href="https://raw.githack.com/TestGitHubCapgemini/frg-it-fiat/main/slds.min.css">
-<!-- Embedded Service ChatBot Styles -->
-      <style type='text/css'>
-
-	/*<!-- Css prueba calendar -->*/
-	      .slds-timeline__item_expandable .slds-timeline__actions_inline .slds-timeline__date {
-  padding-right: .5rem;
-  margin-bottom: 0
-}
-.slds-timeline__date {
-  margin-bottom: .25rem;
-  font-size: .75rem;
-  color: #444
-}
-.slds-icon-standard-date-input {
-  background-color: var(--slds-c-icon-color-background, var(--sds-c-icon-color-background, #969492))
-}
-.slds-icon-standard-date-time {
-  background-color: var(--slds-c-icon-color-background, var(--sds-c-icon-color-background, #969492))
-}
-.slds-datepicker td.slds-is-today>.slds-day,
-.slds-datepicker td:focus:not(.slds-disabled-text)>.slds-day,
-.slds-datepicker td:hover:not(.slds-disabled-text)>.slds-day {
-  cursor: pointer
-}
-
-.slds-datepicker {
-  padding: 0;
-  font-size: .75rem
-}
-
-.slds-datepicker tbody>tr>td,
-.slds-datepicker thead>tr>th {
-  text-align: center
-}
-
-.slds-datepicker thead>tr>th {
-  padding: .5rem;
-  font-weight: 400;
-  color: #444
-}
-
-.slds-datepicker tbody>tr>td {
-  padding: .25rem;
-  font-size: .75rem
-}
-
-.slds-datepicker tbody>tr>td>.slds-day {
-  width: 2rem;
-  height: 2rem;
-  display: block;
-  position: relative;
-  min-width: 2rem;
-  line-height: 2rem;
-  border-radius: 50%;
-  margin: auto
-}
-
-.slds-datepicker tbody>tr>td.slds-is-today>.slds-day,
-.slds-datepicker tbody>tr>td:focus>.slds-day,
-.slds-datepicker tbody>tr>td:hover>.slds-day {
-  cursor: pointer
-}
-.slds-datepicker tbody>tr>td.slds-is-today>.slds-day {
-  background-color: #f3f3f3
-}
-
-.slds-datepicker tbody>tr>td:focus {
-  outline: 0
-}
-
-.slds-datepicker tbody>tr>td:focus>.slds-day {
-  -webkit-box-shadow: #0176d3 0 0 0 1px inset;
-  box-shadow: #0176d3 0 0 0 1px inset
-}
-
-.slds-datepicker tbody>tr>td:hover>.slds-day {
-  background-color: #f3f3f3
-}
-
-.slds-datepicker tbody>tr>td.slds-is-selected>.slds-day {
-  background: #0176d3;
-  color: #fff
-}
-
-.slds-datepicker tbody>tr>td.slds-is-selected:focus>.slds-day {
-  background: #014486;
-  -webkit-box-shadow: #014486 0 0 3px;
-  box-shadow: #014486 0 0 3px;
-  color: #fff
-}
-
-.slds-datepicker__filter {
-  padding: .25rem
-}
-
-.slds-datepicker__filter--month,
-.slds-datepicker__filter_month {
-  padding: 0 .25rem 0 0
-}
-
-.slds-datepicker__month {
-  font-size: .75rem
-}
-
-.slds-has-error .slds-datepicker__filter .slds-select {
-  border: 1px solid #c9c9c9;
-  -webkit-box-shadow: none;
-  box-shadow: none
-}
-
-.slds-day_adjacent-month {
-  color: #747474
-}
-
-.slds-table .slds-datepicker .slds-datepicker__month tbody>tr:hover>td {
-  background-color: unset
-}
-
-.slds-datepicker .slds-has-multi-selection .slds-is-selected-multi:last-child>.slds-day:after {
-  left: auto;
-  right: 0;
-  -webkit-transform: translateX(.25rem);
-  transform: translateX(.25rem)
-}
-
-.slds-datepicker .slds-has-multi-row-selection .slds-is-selected-multi:first-child>.slds-day:before,
-.slds-datepicker .slds-has-multi-row-selection .slds-is-selected-multi:last-child>.slds-day:after {
-  content: "";
-  position: absolute;
-  background: #0176d3;
-  top: 0;
-  left: -50%;
-  height: 100%;
-  width: 2.5rem;
-  -webkit-transform: translateX(-.5rem);
-  transform: translateX(-.5rem);
-  z-index: -1
-}
-
-.slds-datepicker .slds-has-multi-row-selection .slds-is-selected-multi:first-child>.slds-day:before {
-  left: 0;
-  -webkit-transform: translateX(-.25rem);
-  transform: translateX(-.25rem)
-}
-
-.slds-datepicker .slds-has-multi-row-selection .slds-is-selected-multi:last-child>.slds-day:after {
-  left: auto;
-  right: 0;
-  -webkit-transform: translateX(.25rem);
-  transform: translateX(.25rem)
-}
-
-.slds-datepicker td.slds-is-selected-multi>.slds-day {
-  overflow: visible
-}
-
-.slds-datepicker td.slds-is-selected-multi.slds-is-today>.slds-day {
-  -webkit-box-shadow: #fff 0 0 0 1px inset;
-  box-shadow: #fff 0 0 0 1px inset
-}
-
-.slds-datepicker td.slds-is-selected-multi+.slds-is-selected-multi>.slds-day:before {
-  content: "";
-  position: absolute;
-  background: #0176d3;
-  top: 0;
-  left: -50%;
-  height: 100%;
-  width: 2.5rem;
-  -webkit-transform: translateX(-.5rem);
-  transform: translateX(-.5rem);
-  z-index: -1
-}
-
-.slds-datepicker--time,
-.slds-datepicker_time {
-  max-width: 12rem;
-  max-height: 13.5rem;
-  overflow-x: hidden;
-  overflow-y: auto
-}
-
-.slds-datepicker--time__list>li,
-.slds-datepicker_time__list>li {
-  white-space: nowrap;
-  padding: .5rem;
-  padding-left: 2rem;
-  padding-right: 2rem
-}
-
-.slds-datepicker--time__list>li:focus,
-.slds-datepicker--time__list>li:hover,
-.slds-datepicker_time__list>li:focus,
-.slds-datepicker_time__list>li:hover {
-  background: #f3f3f3;
-  text-decoration: none;
-  cursor: pointer
-}
-
-	/*<!-- Css prueba calendar-->*/
-	      
-       /* @import url('https://github.com/TestGitHubCapgemini/frg-it-fiat/tree/main/slds.min.css');*/
-        .embeddedServiceHelpButton .helpButton .uiButton {
-          background-color: transparent !important;
-          font-family: "Arial", sans-serif;
-        }
-
-        .embeddedServiceHelpButton .helpButton .uiButton {
-          /* background-color: transparent !important;  */
-          font-family: "Salesforce Sans", sans-serif !important;
-        }
-
-        .embeddedServiceHelpButton .helpButton .uiButton:focus {
-         /* outline: 1px solid #5820D5 !important; */
-        }
-	      
-	      
-         @media only screen and (min-width: 48em) {
-	   .embeddedServiceHelpButton .helpButton .uiButton:hover::before,
-		 .embeddedServiceHelpButton .helpButton .uiButton:focus::before
-		 {
-		border-radius: 50% !important; 
-	     }
-	 }
-  
-
-        @font-face {
-          font-family: 'Salesforce Sans' !important;
-          src: url('https://c1.sfdcstatic.com/etc/clientlibs/sfdc-aem-master/clientlibs_base/fonts/SalesforceSans-Regular.woff') format('woff'),
-            url('https://c1.sfdcstatic.com/etc/clientlibs/sfdc-aem-master/clientlibs_base/fonts/SalesforceSans-Regular.ttf') format('truetype') !important;
-        }
-
-        span.message{
-          display:none;
-        }
-
-       button.sidebarHeader.minimizedContainer.embeddedServiceSidebarMinimizedDefaultUI {
-		 background-image: url('https://www.jeep.at/content/dam/omnichannel-aem/cross/livechat/headset_icon_chatbot_jeep.png') !important;
-		 background-position: center;
-		 background-size: 70px;
-		 background-repeat: no-repeat !important;
-		 background-color: transparent !important;
-		 height: 70px !important;
-		 width: 70px !important;
-		 border-radius: 50% !important;
-		 min-height: 60px !important;
-		 min-width: 60px !important;
-		 margin: 30px;
-		 border-style: none;
-		 box-shadow: none !important;
- }
-
-        .embeddedServiceHelpButton .helpButton .uiButton{
-	    background-image: url('https://www.jeep.at/content/dam/omnichannel-aem/cross/livechat/headset_icon_chatbot_jeep.png') !important;
-	    background-position: center;
-	    background-color: transparent !important;
-	    background-size: 50px;
-	    background-repeat: no-repeat !important;
-	    width: 40px !important;
-	    height: 40px !important;
-	    border-radius: 50% !important;
-	    min-height: 60px !important;
-	    min-width: 60px !important;
-	    box-shadow: none !important;
-
-        }
-
-        @keyframes pulse-blue {
-          0%   {transform: scale(0.95);box-shadow: 0 0 0 0 var(--lwc-colorBackgroundButtonBrand,rgb(0, 163, 224));}
-          70%  {transform: scale(1.0);box-shadow: 0 0 0 20px rgb(0 126 219 / 0%);}
-          100% {transform: scale(0.95);box-shadow: 0 0 0 0 rgb(0 126 219 / 0%);}
-        }
-
-        .embeddedServiceHelpButton .embeddedServiceIcon{
-          visibility : hidden;
-        }
-
-        .embeddedServiceHelpButton .helpButton{
-         /* height : 90px; */
-	    margin-right: 20px;
-	    margin-bottom: 60px;
-        }
-
-        h2[embeddedService-chatHeader_chatHeader] {
-          font-size : 13px !important;
-        }
-      </style>
-
-
 <script type='text/javascript' src='https://service.force.com/embeddedservice/menu/fab.min.js'></script>
 <script type='text/javascript'>
 	var initESW = function(gslbBaseURL) {
 		// Required if you want labels in a language that’s different from your user’s context.
-		embedded_svc.menu.settings.language = 'it'; //For example, enter 'en' or 'en-US'
+		embedded_svc.menu.settings.language = 'fr'; //For example, enter 'en' or 'en-US'
 
 		embedded_svc.menu.init(
-			'https://psa-customerfirst--dev03.sandbox.my.salesforce.com',
+			'https://psa-customerfirst--dev02.sandbox.my.salesforce.com',
 			'https://d.la3-c1cs-fra.salesforceliveagent.com/chat',
 			gslbBaseURL,
-			'00D7Z00000054Zp',
-			'Bot_IT_AP'
+			'00D7Z00000054AZ',
+			'FR_Fiat_Topolino'
 		);
 	};
 
 	if (!window.embedded_svc || !window.embedded_svc.menu) {
 		var s = document.createElement('script');
-		s.setAttribute('src', 'https://psa-customerfirst--dev03.sandbox.my.salesforce.com/embeddedservice/menu/fab.min.js');
+		s.setAttribute('src', 'https://psa-customerfirst--dev02.sandbox.my.salesforce.com/embeddedservice/menu/fab.min.js');
 		s.onload = function() {
 			initESW(null);
 		};
